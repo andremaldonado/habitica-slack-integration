@@ -1,0 +1,20 @@
+{
+  "name": "habiticaslack",
+  "version": "0.0.1",
+  "description": "A simple integration between habitica and slack",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "/habitica list"
+  },
+  "keywords": [
+    "habitica",
+    "slack",
+    "todo"
+  ],
+  "author": "André Maldonado",
+  "license": "ISC"
+}
