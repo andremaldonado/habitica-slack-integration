@@ -1,21 +1,19 @@
-var express = require('express');
-var request = require('request');
-
+const PORT = 3394;
 var clientId = process.env.SLACK_CLIENTID;
 var clientSecret = process.env.SLACK_CLIENTSECRET;
 
+var express = require('express');
+var request = require('request');
+
 var app = express();
 var bodyParser = require('body-parser');
-const PORT=80;
-
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-app.listen(PORT, function () {
-    console.log("Example app listening on port " + PORT);
-});
+exports.app = app;
+exports.urlencodedParser = urlencodedParser;
 
-app.get('/', function(req, res) {
-    res.send('Ngrok is working! Path Hit: ' + req.url);
+app.listen(PORT, function () {
+    console.log("habiticaslack listening on port " + PORT);
 });
 
 app.get('/oauth', function(req, res) {
@@ -40,14 +38,7 @@ app.get('/oauth', function(req, res) {
     }
 });
 
-app.post('/habitica', urlencodedParser, function(req, res) {
-    if (typeof req.body !== undefined && req.body) {
-        switch(req.body.text) {
-            case "list":
-                res.send('still working on listing your tasks :(');
-                break; 
-            default: 
-                res.send('still working on new tasks creation :(');
-        }
-    }
+app.use((err, request, response, next) => {
+  console.log(err)
+  response.status(500).send('Something broke!')
 });
