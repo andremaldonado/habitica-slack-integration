@@ -4,7 +4,8 @@
 ## Initial local environment configuration
 - Install [ngrok](https://ngrok.com/);
 - Install node;
-- Install dependencies with npm;
+- Install dependencies with npm (you could be prompted to install npm if you don't have it yet);
+  - npm install body-parser
 - Clone repo.
 
 ## Running the program
