@@ -2,11 +2,13 @@
 **This a command-line app for slack that lets you create and retrieve your habitica todos.**
 
 ## Initial local environment configuration
-- Install [ngrok](https://ngrok.com/);
-- Install node;
-- Install dependencies with npm (you could be prompted to install npm if you don't have it yet);
-  - npm install body-parser
 - Clone repo.
+- Download [ngrok](https://ngrok.com/);
+- Install node;
+- Go to the folder and install dependencies with npm (you could be prompted to install npm if you don't have it yet);
+```
+npm install
+```
 
 ## Running the program
 - Start ngrok on the correct port;
