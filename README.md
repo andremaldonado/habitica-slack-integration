@@ -19,6 +19,7 @@ npm install
   - Usage hint: for testing purposes, whenever you want.
 - Get client_id and client_secret from your slack app;
 - Setup envvars (SLACK_CLIENTID, SLACK_CLIENTSECRET);
+  - Tip: if you create a file named appenv to store your enviroment variables, git will ignore it!
 - Install your slack app in a slack team of your choice;
 - Start node;
 - Grab a cup of coffe and be happy.
