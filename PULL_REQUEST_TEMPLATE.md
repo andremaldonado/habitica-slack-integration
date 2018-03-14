@@ -1,7 +1,4 @@
-### What do we have to do?
-
-
-### Which tasks we have to do?
+### Describe the change
 
 
 ### All tests are passing?
