@@ -4,8 +4,8 @@ var bodyParser = require("body-parser");
 
 const GET_TASKS = "https://habitica.com/api/v3/tasks/user";
 
-server.app.post('/habitica', server.urlencodedParser, function(req, res) {
-    if (typeof req.body !== null && req.body) {
+server.app.post("/habitica", server.urlencodedParser, function(req, res) {
+    if (typeof req.body !== "undefined" && req.body) {
         switch(req.body.text) {
             case "list":
                 request({
