@@ -4,16 +4,20 @@
 **This a command-line app for slack that lets you create and retrieve your habitica todos.**
 
 ## Initial local environment configuration
-- Clone repo.
-- Download [ngrok](https://ngrok.com/);
-- Install node;
-- Go to the folder and install dependencies with npm (you could be prompted to install npm if you don't have it yet);
+- Install [Docker](https://docs.docker.com/install/)
+- Clone repo
+- Download [ngrok](https://ngrok.com/)
+- Navigate to the folder of the repo
+- Create docker image:
 ```
-npm install
+docker build -t habitica-slack .
 ```
 
 ## Running the program
 - Start ngrok on the correct port;
+```
+./ngrok http 3394
+```
 - Create a [slack app](https://api.slack.com/apps/) with the same configuration this program uses;
   - Command: /habitica;
   - Request URL: your-ngrok-url;
@@ -21,12 +25,15 @@ npm install
   - Usage hint: for testing purposes, whenever you want.
 - Get client_id and client_secret from your slack app;
 - Get User ID and API Token from habitica;
-- Setup these enviroment variables:
+- Setup these enviroment variables in a file:
   - SLACK_CLIENTID
   - SLACK_CLIENTSECRET
   - HABITICA_USERID
   - HABITICA_APITOKEN
   - Tip: if you create a file named appenv to store your enviroment variables, git will ignore it!
 - Install your slack app in a slack team of your choice;
-- Start node;
+- Run docker image with port forwarding and setting up your environment variables
+```
+docker run --env-file [your-file-here] -p 3394:3394 habitica-slack
+```
 - Grab a cup of coffe and be happy.
