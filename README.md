@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/293b6e4410f447ed9466d10dc0cc950f)](https://www.codacy.com/app/andre.maldonado/habitica-slack-integration?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andremaldonado/habitica-slack-integration/&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0d9ff80136a54fc0b8b423df801d87a8)](https://www.codacy.com/app/andre.maldonado/habitica-slack-integration?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andremaldonado/habitica-slack-integration/&amp;utm_campaign=Badge_Grade)
 
 # Habitica-Slack Integration
 **This a command-line app for slack that lets you create and retrieve your habitica todos.**
