@@ -1,10 +1,11 @@
 var server = require("../config/server");
 var request = require("request");
 var bodyParser = require("body-parser");
+var app = server.app;
 
 const GET_TASKS = "https://habitica.com/api/v3/tasks/user";
 
-server.app.post("/habitica", server.urlencodedParser, function(req, res) {
+app.post("/habitica", server.urlencodedParser, function(req, res) {
     if (typeof req.body !== "undefined" && req.body) {
         switch(req.body.text) {
             case "list":
@@ -24,3 +25,5 @@ server.app.post("/habitica", server.urlencodedParser, function(req, res) {
         }
     }
 });
+
+module.exports = app;

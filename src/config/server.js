@@ -9,9 +9,6 @@ var app = express();
 var bodyParser = require("body-parser");
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-exports.app = app;
-exports.urlencodedParser = urlencodedParser;
-
 app.listen(PORT, function () {
     console.log("habiticaslack listening on port " + PORT);
 });
@@ -42,3 +39,6 @@ app.use((err, request, response, next) => {
   console.log(err);
   response.status(500).send("Something broke!");
 });
+
+exports.app = app;
+exports.urlencodedParser = urlencodedParser;
