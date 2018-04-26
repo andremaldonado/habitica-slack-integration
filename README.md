@@ -37,3 +37,10 @@ docker build -t habitica-slack .
 docker run --env-file [your-file-here] -p 3394:3394 habitica-slack
 ```
 - Grab a cup of coffe and be happy.
+
+##How to test (in progress)
+Just run:
+```
+npm test
+```
+And check the results.
