@@ -21,7 +21,10 @@ app.post("/habitica", server.urlencodedParser, function(req, res) {
                 });
                 break; 
             default: 
-                res.send("still working on new tasks creation :(");
+                res.send({
+			"success": "false",
+			"message": "Still working on tasks creation"
+		});
         }
     }
 });

@@ -9,6 +9,7 @@ describe("/GET list", () => {
     it("it should return a list of user\'s tasks", (done) => {
         chai.request(server)
         .post("/habitica")
+        .type("urlencoded")
         .send({text: "list"})
         .end((err, res) => {
             res.should.have.status(200);
