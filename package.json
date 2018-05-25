@@ -8,9 +8,14 @@
     "express": "^4.16.2",
     "request": "^2.85.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "mocha": "^5.1.0",
+    "nock": "^9.2.6"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --timeout 10000",
     "start": "nodejs src/index.js"
   },
   "keywords": [
