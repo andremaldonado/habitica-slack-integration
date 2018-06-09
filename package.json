@@ -2,7 +2,7 @@
   "name": "habiticaslack",
   "version": "0.0.1",
   "description": "A simple integration between habitica and slack",
-  "main": "src/ndex.js",
+  "main": "src/index.js",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
@@ -15,7 +15,7 @@
     "nock": "^9.2.6"
   },
   "scripts": {
-    "test": "mocha --timeout 10000",
+    "test": "NODE_ENV=test mocha --timeout 10000",
     "start": "nodejs src/index.js"
   },
   "keywords": [

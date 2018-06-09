@@ -1,4 +1,4 @@
-const PORT = 3394; //TODO: remove this from here and put it in a config file
+const CONFIG = require("../config/config");
 var clientId = process.env.SLACK_CLIENTID;
 var clientSecret = process.env.SLACK_CLIENTSECRET;
 
@@ -13,8 +13,8 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use(urlencodedParser);
 
-app.listen(PORT, function () {
-    console.log("habiticaslack listening on port " + PORT);
+app.listen(CONFIG.app.port, function () {
+    console.log("habiticaslack listening on port " + CONFIG.app.port);
 });
 
 app.route("/habitica").post(habitica.post);

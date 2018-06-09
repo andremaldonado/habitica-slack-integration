@@ -1,15 +1,13 @@
 var request = require("request");
 var bodyParser = require("body-parser");
-
-const HABITICA_API = "https://habitica.com/api/v3"; //TODO: remove this url from here
-const GET_TASKS = "/tasks/user?type=todos"; //TODO: remove this url from here
+const CONFIG = require ("../config/config");
 
 function post(req, res) {
     if (typeof req.body !== "undefined" && req.body) {
         switch(req.body.text) {
             case "list":
                 request({
-                    url: HABITICA_API + GET_TASKS,
+                    url: CONFIG.habitica.api_url + CONFIG.habitica.get_tasks_url,
                     headers: { "x-api-user": process.env.HABITICA_USERID, "x-api-key": process.env.HABITICA_APITOKEN }
                 }, function (apiError, apiResponse, apiBody) {
                     if (apiResponse.statusCode == 200) {
