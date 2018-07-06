@@ -22,7 +22,7 @@ describe("/GET list", () => {
             chai.request(server)
             .post("/habitica")
             .type("urlencoded")
-            .send({text: "list"})
+            .send({text: "list"}) //TODO: this definition is wrong. I must replicate the same call slack will do, passing user_id as described here in https://api.slack.com/slash-commands#app_command_handling
             .end((err, res) => {
                 res.should.have.status(200);
                 res.should.be.a("object");
