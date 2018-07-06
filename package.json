@@ -16,7 +16,7 @@
   },
   "scripts": {
     "test": "NODE_ENV=test mocha --timeout 10000",
-    "start": "nodejs src/index.js"
+    "start": "node src/index.js"
   },
   "keywords": [
     "habitica",

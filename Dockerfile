@@ -1,7 +1,7 @@
-FROM node:7
-WORKDIR /src
-COPY package.json /src
+FROM node:10
+WORKDIR /usr/src
+COPY package.json ./
 RUN npm install
-COPY . /src
+COPY . .    
 CMD npm start
 EXPOSE 3394 

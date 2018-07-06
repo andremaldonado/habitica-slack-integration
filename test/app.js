@@ -11,7 +11,23 @@ var nock = require("nock");
 describe("/GET list", () => {
 
     describe("when task list is requested", () => {
-        
+
+        var slackrequest = {
+            token: "gIkuvaNzQIHg97ATvDxqgjtO",
+            team_id: "T0001",
+            team_domain: "example",
+            enterprise_id: "E0001",
+            enterprise_name: "Globular%20Construct%20Inc",
+            channel_id: "C2147483705",
+            channel_name: "test",
+            user_id: "U2147483697",
+            user_name: "Steve",
+            command: "/weather",
+            text: "list",
+            response_url: "https://hooks.slack.com/commands/1234/5678",
+            trigger_id: "13345224609.738474920.8088930838d88f008e0"
+        }
+
         var habiticaresponse = nock(CONFIG.habitica.api_url)
             .get(CONFIG.habitica.get_tasks_url)
             .reply(200, 
@@ -22,7 +38,7 @@ describe("/GET list", () => {
             chai.request(server)
             .post("/habitica")
             .type("urlencoded")
-            .send({text: "list"})
+            .send(slackrequest) 
             .end((err, res) => {
                 res.should.have.status(200);
                 res.should.be.a("object");
@@ -40,7 +56,7 @@ describe("/GET list", () => {
             chai.request(server)
             .post("/habitica")
             .type("urlencoded")
-            .send({text: "list"})
+            .send(slackrequest)
             .end((err, res) => {
                 res.should.have.status(200);
                 res.should.be.a("object");

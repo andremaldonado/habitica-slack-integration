@@ -21,8 +21,8 @@ docker build -t habitica-slack .
 - Create a [slack app](https://api.slack.com/apps/) with the same configuration this program uses;
   - Command: /habitica;
   - Request URL: your-ngrok-url;
-  - Short description: for testing purposes, whenever you want;
-  - Usage hint: for testing purposes, whenever you want.
+  - Short description: for testing purposes, whatever you want;
+  - Usage hint: for testing purposes, whatever you want.
 - Get client_id and client_secret from your slack app;
 - Get User ID and API Token from habitica;
 - Setup these enviroment variables in a file:
