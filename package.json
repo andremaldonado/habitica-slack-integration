@@ -6,16 +6,22 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "lodash": "^4.17.11",
+    "redis": "^2.8.0",
     "request": "^2.85.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
     "chai-http": "^4.0.0",
     "mocha": "^5.1.0",
-    "nock": "^9.2.6"
+    "nock": "^9.2.6",
+    "redis-mock": "^0.41.0",
+    "sinon": "^7.2.2"
   },
   "scripts": {
     "test": "NODE_ENV=test mocha --timeout 10000",
+    "test-watch": "nodemon --exec 'npm test'",
     "start": "node src/index.js"
   },
   "keywords": [
