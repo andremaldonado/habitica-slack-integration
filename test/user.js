@@ -17,7 +17,7 @@ describe('User', () => {
             const redis_stub = sinon.stub(redis, 'createClient')
             const redis_fake_instance = redis_mock.createClient()
             
-            redis_fake_instance.set('existent-user',"{'habitica_token': 'test_token'}", () => { 
+            redis_fake_instance.set('existent-user',"{\"habitica_token\": \"test_token\"}", () => { 
                 redis_stub.returns(redis_fake_instance)
             })
         })
@@ -30,12 +30,8 @@ describe('User', () => {
             return user.getUserToken().should.be.rejected
         })
 
-        it('it should return user data when an user is found', (done) => {
-            user.getUserToken('existent-user').then( (token) => {
-                expect(token).to.be.a('string')
-                done();
-            })
-            //return user.getUserToken('existent-user').should.be.a('string')
+        it('it should return user data when an user is found', () => {
+            return user.getUserToken('existent-user').should.eventually.equal('test_token')
         })
     })
 })

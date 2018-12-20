@@ -8,7 +8,12 @@ function getUserToken(slack_user_id) {
         } else {
             const redisClient = redis.createClient()
             redisClient.get(slack_user_id, (error, reply) => {
-                resolve(reply)
+                if (_.isNil(reply)) {
+                    resolve(null)
+                } else {
+                    const userData = JSON.parse(reply)
+                    resolve(userData.habitica_token)
+                }
             })
         }
     })
